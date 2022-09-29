@@ -7,16 +7,21 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    
+    <br>
     <div class="mainText">
         <% skills.forEach(function(skill, i){ %>
-            <a href="/skills/<%=i%>">-<%= skill.skill %></a>
+            <form action="/skills/<%= i %>?_method=DELETE" class="delete-form" method="POST">
+                <div ><button type="submit">&#10060;</button>
+            </form>
+            <a href="/skills/<%=i%>">-<%= skill.skill %></a></div>
             
             
        <%  })%>
-       <br><br><br><br>
-
+       <br><br><br>
+    
     </div>
+    <a href="/skills/new">Add a Skill</a>  
+    <br>
     <a href="/">Home</a>
   </body>
 </html>

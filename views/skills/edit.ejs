@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    
+    <div class="mainText">
+        <form action="/skills/<%= id %>?_method=PUT" method="POST" autocomplete="off">
+            <br>
+            <div class="horizontal">Skill:&emsp;<input type="text" value="<%=skill.skill%>" name="skillName"></div>
+            <br>
+            <div class="horizontal">Experience:&emsp;<input type="text" value="<%=skill.experience%>" name="skillExperience"></div>
+            <br>
+            <button type="submit">Save Skill</button>
+        </form>
+    </div>
+    <br>
+
+    <br><br>
+    <a href="/skills/">Back to Skills</a>
+  </body>
+</html>
+<!-- add input on this page -->

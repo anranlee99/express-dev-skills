@@ -2,7 +2,12 @@ const Skills = require('../models/skill');
 
 module.exports = {
     index,
-    show
+    show,
+    new: newSkill,
+    create,
+    update,
+    delete: deleteSkill,
+    edit
 }
 
 function index(req, res){
@@ -13,11 +18,45 @@ function index(req, res){
 }
 
 function show(req, res){
-    console.log('id',typeof req.params.id)
+
     res.render('skills/show', {
         
         skills: Skills.getOne(req.params.id),
-        // title: 'skill',
+        id: req.params.id,
         title: Skills.getOne(req.params.id).skill,
     })
+}
+
+function newSkill(req, res){
+    res.render('skills/new', {
+        title: 'New Skill',
+    })
+}
+
+function create(req, res){
+    console.log('req body', req.body)
+    Skills.create(req.body.skillName, req.body.skillExperience)
+    res.redirect('/skills')
+}
+
+function update(req, res){
+    Skills.updateOne(req.params.id, req.body);
+
+    res.redirect(`/skills/${req.params.id}`)
+}
+
+function edit(req, res){
+    res.render('skills/edit', {
+        skill: Skills.getOne(req.params.id),
+        id: req.params.id,
+        title: 'Edit Skill'
+    });
+}
+
+function deleteSkill(req, res){
+    console.log(req.params.id)
+    Skills.deleteOne(req.params.id);
+
+
+    res.redirect('/skills');
 }

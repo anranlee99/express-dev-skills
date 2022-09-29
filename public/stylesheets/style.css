@@ -14,4 +14,19 @@ a {
 .mainText{
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+}
+.horizontal{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.show-horizontal{
+  display: flex;
+  justify-content: space-between;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
 }

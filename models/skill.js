@@ -14,7 +14,34 @@ function getOne(id) {
     return skills[id];
 }
 
+function create(skillName, skillExperience) {
+    let obj = {}
+    obj.skill = skillName
+    obj.experience = skillExperience
+    skills.push(obj)
+}
+
+function deleteOne(id) {
+
+    skills.splice(id, 1);
+}
+
+function edit(id) {
+    return getOne(id)
+}
+function updateOne(id, obj) {
+    console.log(obj)
+    let skillToUpdate = getOne(id)
+    skillToUpdate.skill = obj.skillName;
+    skillToUpdate.experience = obj.skillExperience;
+
+}
+
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    create,
+    deleteOne,
+    edit,
+    updateOne
 }

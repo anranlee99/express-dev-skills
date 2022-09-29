@@ -6,15 +6,19 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
     
     <div class="mainText">
+       <div class="horizontal">
+        <%= 'Skill: ' %>
         <%= skills.skill %><br>
-        <%= 'Experience: '%>
+        <%= 'Experience: ' %>
         <%= skills.experience %> 
+        </div>
        <br><br><br><br>
 
     </div>
+    <a href="/skills/<%= id %>/edit">Edit Skill</a> 
+    <br><br>
     <a href="/skills/">Back to Skills</a>
   </body>
 </html>
