@@ -9,10 +9,15 @@
     
     <div class="mainText">
        <div class="horizontal">
+        <form action="/skills/<%= id %>?_method=DELETE" class="delete-form" method="POST">
+            <div ><button type="submit">&#10060;</button>
+        </form> 
         <%= 'Skill: ' %>
         <%= skills.skill %><br>
         <%= 'Experience: ' %>
-        <%= skills.experience %> 
+        <%= skills.experience %>
+        <br>
+       
         </div>
        <br><br><br><br>
 
